@@ -73,4 +73,83 @@ describe "Calculator" do
 
   end    
 
+  describe "#pow" do
+
+    it "returns the power of its positive integer arguments" do
+      expect(calc.pow(2,2)).to eq(4) 
+    end
+
+    it "returns the power of its negative arguments" do
+      expect(calc.pow(-2,2)).to eq(4) 
+    end
+
+    it "returns the power of its float arguments" do
+      expect(calc.pow(1.5, 1)).to eq(1.5)
+    end
+
+    it "returns the power of number to 0" do
+      expect(calc.pow(2,0)).to eq(1)
+    end
+
+  end  
+
+  describe "#sqrt" do
+
+    it "returns the square root of its positive integer arguments" do
+      expect(calc.sqrt(9)).to eq(3) 
+    end
+
+    it "returns the square root of its negative arguments" do
+      expect{calc.sqrt(-2)}.to raise_error(ArgumentError) 
+    end
+
+    it "returns irrational square root rounded to two decimals" do
+      expect(calc.sqrt(5)).to eq(2.24)
+    end
+
+  end
+
+  describe "#multiply" do
+
+    it "returns the product of its positive integer arguments" do
+      expect(calc.multiply(2,2)).to eq(4) 
+    end
+
+    it "returns the product of its negative arguments" do
+      expect(calc.multiply(-2,2)).to eq(-4) 
+    end
+
+    it "returns the product of its float arguments" do
+      expect(calc.multiply(1.5, 2)).to eq(3)
+    end
+
+  end
+
+  describe "#memory=" do
+
+    before "setting everything up" do
+      calc.memory = "temp mem"
+    end
+
+    it "it sets the instance variable" do
+      expect(calc.memory).to eq("temp mem")
+    end
+
+    it "it overwrites the instance variable memory" do
+      expect(calc.memory = "current mem").to eq("current mem")
+    end
+
+  end
+
+  describe "#memory" do
+
+    it "initializes instance variable as nil" do
+      expect(calc.memory).to eq(nil)
+    end
+
+  end
+
+  describe "#stringify" do
+
+  end
 end
