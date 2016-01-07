@@ -150,6 +150,54 @@ describe "Calculator" do
   end
 
   describe "#stringify" do
+    let(:calc_string){ Calculator.new(true) }
 
+    describe "#add" do
+
+      it "returns the sum as a string" do
+        expect(calc_string.add(2,2)).to eq("4")
+      end
+
+    end
+
+    describe "#subtract" do
+
+      it "returns the difference as a string" do
+        expect(calc_string.subtract(2,2)).to eq("0")
+      end
+
+    end 
+
+    describe "#multiply" do
+
+      it "returns the product as a string" do
+        expect(calc_string.multiply(2,2)).to eq("4")
+      end
+
+    end
+
+    describe "#divide" do
+
+      it "returns the quotient as a string" do
+        expect(calc_string.divide(2,2)).to eq("1")
+      end
+
+    end
+
+    describe "#pow" do
+
+      it "returns the power as a string" do
+        expect(calc_string.pow(2,2)).to eq("4.0")
+      end
+
+    end
+
+    describe "#sqrt" do
+
+      it "returns the square root as a string" do
+        expect(calc_string.sqrt(9)).to eq("3")
+      end
+
+    end
   end
 end
